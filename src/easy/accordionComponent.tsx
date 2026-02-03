@@ -15,7 +15,7 @@ function AccordionComponent() {
   useEffect(() => {
     const fetchData = async () => {
         try {
-            const responce = await axios.get("https://jsonplaceholder.typicode.com/posts")
+            const responce = await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=4")
             setPosts(responce.data)
 
         }catch (err){
@@ -27,7 +27,7 @@ function AccordionComponent() {
   }, []);
 
   return (
-    <div className="w-full h-vh bg-gray-800 flex justify-center items-center">
+    <div className="w-full h-dvh bg-gray-800 flex justify-center items-center">
         <div>
             {posts.map(post => (
                 <div key={post?.id} className="w-3xl bg-gray-600 border border-amber-600 m-3 py-5 px-2" onClick={() => setSelectedId(selectedId === post.id ? null : post.id)}>
