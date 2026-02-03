@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-export function PasswordGenerator() {
+export default function PasswordGenerator() {
   const [length, setLength] = useState(15);
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [character, setCharacter] = useState(false);
